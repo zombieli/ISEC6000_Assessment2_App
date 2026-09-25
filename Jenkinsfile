@@ -1,5 +1,5 @@
 pipeline {
-    agent none 
+    agent any 
     
     options {
         // Keep only the last 5 builds to save storage
@@ -47,7 +47,6 @@ pipeline {
         }
 
         stage('Build & Push Docker Image') {
-            agent any 
             steps {
                 echo 'Building Docker Image...'
                 // Build and tag Docker image
